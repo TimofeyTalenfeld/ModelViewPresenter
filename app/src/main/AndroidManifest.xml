@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.sample.rxpm">
+    package="org.sample.mvp">
 
     <application
         android:label="@string/sample"
         android:theme="@style/AppTheme">
         <activity
-            android:name="org.sample.rxpm.view.main.MainActivity"
+            android:name="org.sample.mvp.view.main.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,5 +3,5 @@
     <string name="connection_error_title">Ошибка соединения</string>
     <string name="connection_error_subtitle">Проверьте подключение к интернету\nи повторите попытку</string>
     <string name="some_error_happens">Что-то пошло нет так…</string>
-    <string name="sample">RxPM-sample</string>
+    <string name="sample">MVP-sample</string>
 </resources>
