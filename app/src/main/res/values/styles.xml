@@ -1,0 +1,31 @@
+<resources xmlns:drawme="http://schemas.android.com/apk/res/com.rafakob.drawme">
+    <style name="ProgressWheel">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="matProg_circleRadius">75dp</item>
+        <item name="matProg_barColor">@color/common_red</item>
+        <item name="matProg_progressIndeterminate">true</item>
+        <item name="matProg_barWidth">4dp</item>
+    </style>
+
+    <style name="AutoToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="titleTextColor">@color/common_white</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+
+    <style name="RippledItem">
+        <item name="dm_rippleUseControlHighlight">false</item>
+        <item name="dm_maskBrightnessThreshold">@dimen/ripple_mask_brightness_threshold</item>
+    </style>
+
+    <style name="RippledTextItem" parent="RippledItem">
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+</resources>

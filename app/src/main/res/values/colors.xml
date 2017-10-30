@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_red">#db3727</color>
+    <color name="common_red_dark">#cb3122</color>
+    <color name="common_white">#ffffff</color>
+    <color name="app_background">#f2f2f2</color>
+    <color name="black_90">#e6000000</color>
+    <color name="common_blue">#0077cc</color>
+    <color name="common_inactive">#bcbcbc</color>
+</resources>

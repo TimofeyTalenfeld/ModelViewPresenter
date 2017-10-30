@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="168dp"
+    android:background="@color/common_white">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="160dp"
+        android:layout_height="168dp"
+        android:layout_marginRight="4dp"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_large"
+        android:typeface="sans"
+        android:textStyle="normal"
+        android:textColor="@color/black_90"
+        android:lineSpacingExtra="4sp"
+        android:ellipsize="end"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|left"
+    />
+
+    <com.rafakob.drawme.DrawMeFrameLayout
+        android:id="@+id/clickableArea"
+        style="@style/RippledItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

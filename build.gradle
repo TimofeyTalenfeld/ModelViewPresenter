@@ -1,0 +1,33 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: 'dependencies.gradle'
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath libraries.gradle
+        classpath libraries.kotlin_gradle
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' } // pack github projects into artifacts
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+    compileSdkVersion = 25
+    buildToolsVersion = "25.0.2"
+    minSdkVersion = "15"
+    targetSdkVersion = 25
+}
+

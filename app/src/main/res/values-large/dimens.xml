@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_width">323dp</dimen>
+    <dimen name="splash_height">110dp</dimen>
+
+    <dimen name="vertical_landing_padding">16dp</dimen>
+</resources>

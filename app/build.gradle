@@ -1,0 +1,90 @@
+apply from: '../dependencies.gradle'
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+int MAJOR_VERSION = 1
+int MINOR_VERSION = 0
+int PATCH_VERSION = 0
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            multiDexEnabled true
+            minifyEnabled true
+
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
+            buildConfigField "Boolean", "LOG_ENABLED", "false"
+            buildConfigField "boolean", "MULTIDEX_ENABLED", multiDexEnabled ? "true" : "false"
+        }
+
+        debug {
+            multiDexEnabled true
+            minifyEnabled false
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+            buildConfigField "Boolean", "LOG_ENABLED", "true"
+            buildConfigField "boolean", "MULTIDEX_ENABLED", multiDexEnabled ? "true" : "false"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath libraries.dexcount
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile libraries.appcompat
+    compile libraries.design
+
+    compile libraries.kotlin
+
+    compile libraries.rxjava
+    compile libraries.rxandroid
+
+    compile libraries.rxbinding
+    compile libraries.rxbinding_recyclerview
+    compile libraries.rxbinding_kotlin
+    compile libraries.rxrelay
+
+    compile libraries.materialish_progress
+
+    compile libraries.kotson
+
+    compile libraries.flexible_divider
+
+    compile libraries.drawme
+
+    compile libraries.dagger
+    kapt libraries.dagger_compiler
+
+    compile libraries.multidex
+}
+
