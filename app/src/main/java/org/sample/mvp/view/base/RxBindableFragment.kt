@@ -9,7 +9,6 @@ import org.sample.mvp.utils.addTo
 
 abstract class RxBindableFragment<in View: BaseView, out Presenter : IPresenter<View>>: BaseFragment(), BaseView {
     abstract protected val presenter: Presenter
-    private val viewSubscriptions by lazy { CompositeDisposable() }
 
     abstract fun presenter(): IPresenter<View>
 
@@ -27,18 +26,12 @@ abstract class RxBindableFragment<in View: BaseView, out Presenter : IPresenter<
     }
 
     override fun onBackPressed(): Boolean {
-        presenter.unbind()
+        presenter.onBackPressed()
         return super.onBackPressed()
     }
 
     override fun onStop() {
         super.onStop()
-        viewSubscriptions.clear()
-    }
-
-    protected fun <T> Observable<T>.bindToView(consumer: (T) -> Unit) {
-        observeOn(AndroidSchedulers.mainThread())
-            .subscribe(consumer)
-            .addTo(viewSubscriptions)
+        presenter.unbind()
     }
 }

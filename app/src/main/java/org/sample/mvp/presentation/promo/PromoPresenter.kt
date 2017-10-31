@@ -24,8 +24,8 @@ class PromoPresenter @Inject constructor(
         viewState.showWeb(it.url, it.title)
     }
 
-    override fun unbind() {
-        super.unbind()
+    override fun onBackPressed() {
+        super.onBackPressed()
         ComponentManager.clearPromoComponent()
     }
 
